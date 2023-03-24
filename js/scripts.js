@@ -17,13 +17,13 @@ function getResult(answers){
   }
   if(Math.max(c, j, p, g) === c){
     document.querySelector("h2").innerText = "Your Answer is C#"
-    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language. This object oriented programming language is able to be used for"
+    document.querySelector("#answer").innerText = "C# is a robust general purpose high level object oriented programming language."
   } else if(Math.max(c, j, p, g) === j){
     document.querySelector("h2").innerText = "Your Answer is Javascript"
-    document.querySelector("#answer").innerText = "Javascript is a core technology and a programming language used on almost every website."
+    document.querySelector("#answer").innerText = "Javascript is a core technology and a programming language used for everything from interactivity to data processing it is a versatile tool used for most of the web."
   }else if(Math.max(c, j, p, g) === p){
     document.querySelector("h2").innerText = "Your Answer is Python"
-    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
+    document.querySelector("#answer").innerText = "Python is a x"
   }else if(Math.max(c, j, p, g) === g){
     document.querySelector("h2").innerText = "Your Answer is Go"
     document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
