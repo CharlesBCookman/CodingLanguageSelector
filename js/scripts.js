@@ -14,9 +14,6 @@ function getResult(answers){
       g++;
     }
   }
-  return (c, j, p, g);
-}
-function showResult(c, j, p, g)
   if(Math.max(c, j, p, g) === c){
     document.querySelector("h2").innerText = "Your Answer is C#"
     document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
