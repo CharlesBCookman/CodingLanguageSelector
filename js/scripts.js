@@ -22,10 +22,10 @@ function getResult(answers){
     document.querySelector("h2").innerText = "Your Answer is Javascript"
     document.querySelector("#answer").innerText = "Javascript is a core technology and a programming language used on almost every website."
   }else if(Math.max(c, j, p, g) === p){
-    document.querySelector("h2").innerText = "Your Answer is C#"
+    document.querySelector("h2").innerText = "Your Answer is Python"
     document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
   }else if(Math.max(c, j, p, g) === g){
-    document.querySelector("h2").innerText = "Your Answer is C#"
+    document.querySelector("h2").innerText = "Your Answer is Go"
     document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
   }else{
     console.log("something went wrong with get result")
@@ -33,7 +33,14 @@ function getResult(answers){
 }
 
 function collectAnswers(){
-  
+  let answers = ""
+  answers += document.forms.form1.element.q1.value;
+  answers += document.forms.form2.element.q1.value;
+  answers += document.forms.form3.element.q1.value;
+  answers += document.forms.form4.element.q1.value;
+  answers += document.forms.form5.element.q1.value;
+  answers += document.forms.form6.element.q1.value;
+  return answers;
 }
 
 
