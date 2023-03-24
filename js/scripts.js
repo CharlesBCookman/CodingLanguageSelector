@@ -14,7 +14,21 @@ function getResult(answers){
       g++;
     }
   }
-  if()
+  return (c, j, p, g);
+}
+function showResult(c, j, p, g)
+  if(Math.max(c, j, p, g) === c){
+    document.querySelector("h2").innerText = "Your Answer is C#"
+    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
+  } else if(Math.max(c, j, p, g) === j){
+
+  }else if(Math.max(c, j, p, g) === j){
+    
+  }else if(Math.max(c, j, p, g) === j){
+    
+  }else{
+    console.log("something went wrong with get result")
+  }
 }
 
 function hide(element){
