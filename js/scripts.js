@@ -1,3 +1,4 @@
+
 function getResult(answers){
   let c = 0;
   let j = 0;
@@ -16,17 +17,25 @@ function getResult(answers){
   }
   if(Math.max(c, j, p, g) === c){
     document.querySelector("h2").innerText = "Your Answer is C#"
-    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
+    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language. This object oriented programming language is able to be used for"
   } else if(Math.max(c, j, p, g) === j){
-
-  }else if(Math.max(c, j, p, g) === j){
-    
-  }else if(Math.max(c, j, p, g) === j){
-    
+    document.querySelector("h2").innerText = "Your Answer is Javascript"
+    document.querySelector("#answer").innerText = "Javascript is a core technology and a programming language used on almost every website."
+  }else if(Math.max(c, j, p, g) === p){
+    document.querySelector("h2").innerText = "Your Answer is C#"
+    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
+  }else if(Math.max(c, j, p, g) === g){
+    document.querySelector("h2").innerText = "Your Answer is C#"
+    document.querySelector("#answer").innerText = "C# is a robust general purpose high level programming language."
   }else{
     console.log("something went wrong with get result")
   }
 }
+
+function collectAnswers(){
+  
+}
+
 
 function hide(element){
   element.setAttribute("class", "hidden");
@@ -36,7 +45,7 @@ function show(element){
   element.removeAttribute("class");
 }
 
-
+//q is short for question r is short for radio
 window.addEventListener("load", function(){
   const startDiv = document.querySelector("#start");
   const startButton = document.querySelector("#start-button");
@@ -51,9 +60,41 @@ window.addEventListener("load", function(){
   const q5Div = document.querySelector("#question5");
   const form5 = document.querySelector("#form5");
   const q6Div = document.querySelector("#question6");
-  const form6 = document.querySelector("#form6")
-  startButton.onclick = (event) => {
-
-    event.preventDefault();
+  const form6 = document.querySelector("#form6");
+  const result = document.querySelector("#result");
+  let answers = ""
+  startButton.onclick = () => {
+    show(q1Div);
+    hide(startDiv);
   }
+  form1.addEventListener("submit", function(event){
+    show(q2Div);
+    hide(q1Div);
+    event.preventDefault();
+  })
+  form2.addEventListener("submit", function(event){
+    show(q3Div);
+    hide(q2Div);
+    event.preventDefault();
+  })
+  form3.addEventListener("submit", function(event){
+    show(q4Div);
+    hide(q3Div);
+    event.preventDefault();
+  })
+  form4.addEventListener("submit", function(event){
+    show(q5Div);
+    hide(q4Div);
+    event.preventDefault();
+  })
+  form5.addEventListener("submit", function(event){
+    show(q6Div);
+    hide(q5Div);    
+    event.preventDefault();
+  })
+  form6.addEventListener("submit", function(event){
+    show(result);
+    hide(q6Div);
+    event.preventDefault();
+  })
   })
