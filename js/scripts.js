@@ -4,13 +4,13 @@ function getResult(answers){
   let p = 0;
   let g = 0;
   for(let i = 0; i < answers.length; i++){
-    if(answers.charAt(i) = "c"){
+    if(answers.charAt(i) === "c"){
       c++;
-    } else if (answers.charAt(i) = "j"){
+    } else if (answers.charAt(i) === "j"){
       j++;
-    } else if (answers.charAt(i) = "p"){
+    } else if (answers.charAt(i) === "p"){
       p++;
-    }else if (answers.charAt(i) = "g"){
+    }else if (answers.charAt(i) === "g"){
       g++;
     }
   }
