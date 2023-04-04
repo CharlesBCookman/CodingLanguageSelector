@@ -26,19 +26,6 @@ function show(element){
   element.removeAttribute("class");
 }
 
-let collectAnswers = () => {
-  let answers = ""
-  let a1 = document.forms.form1.element.q1.value;
-  let a2 = document.forms.form2.element.q2.value;
-  let a3 = document.forms.form3.element.q3.value;
-  let a4 = document.forms.form4.element.q4.value;
-  let a5 = document.forms.form5.element.q5.value;
-  let a6 = document.forms.form6.element.q6.value;
-  answers = a1 + a2 + a3 + a4 + a5 + a6;
-  console.log(answers);
-  return answers;
-}
-
 function showResult([c, j, p, g]){
   if(Math.max(c, j, p, g) === c){
     document.querySelector("h2").innerText = "Your Answer is C#"
@@ -74,38 +61,50 @@ window.addEventListener("load", function(){
   const q6Div = document.querySelector("#question6");
   const form6 = document.querySelector("#form6");
   const result = document.querySelector("#result");
+  let answers = ""
   startButton.onclick = () => {
     show(q1Div);
     hide(startDiv);
   }
   form1.addEventListener("submit", function(event){
+    event.preventDefault();
+    answers += document.querySelector('input[name="q1"]:checked').value
+    console.log(answers);
     show(q2Div);
     hide(q1Div);
-    event.preventDefault();
   })
   form2.addEventListener("submit", function(event){
+    event.preventDefault();
+    answers += document.querySelector('input[name="q2"]:checked').value
+    console.log(answers);
     show(q3Div);
     hide(q2Div);
-    event.preventDefault();
   })
   form3.addEventListener("submit", function(event){
+    event.preventDefault();
+    answers += document.querySelector('input[name="q3"]:checked').value
+    console.log(answers);
     show(q4Div);
     hide(q3Div);
-    event.preventDefault();
   })
   form4.addEventListener("submit", function(event){
+    event.preventDefault();
+    answers += document.querySelector('input[name="q4"]:checked').value
+    console.log(answers);
     show(q5Div);
     hide(q4Div);
-    event.preventDefault();
   })
   form5.addEventListener("submit", function(event){
+    event.preventDefault();
+    answers += document.querySelector('input[name="q5"]:checked').value
+    console.log(answers);
     show(q6Div);
     hide(q5Div);    
-    event.preventDefault();
   })
   form6.addEventListener("submit", function(event){
     event.preventDefault();
-    showResult(getResult(collectAnswers()));
+    answers += document.querySelector('input[name="q6"]:checked').value
+    showResult(getResult(answers));
     show(result);
     hide(q6Div);
   })
