@@ -10,14 +10,13 @@ function getResult(answers){
       j++;
     } else if (answers.charAt(i) === "p"){
       p++;
-    }else if (answers.charAt(i) === "g"){
+    }else {
       g++;
-    } else {
-      console.log("something went wrong with getResult")
     }
   }
   return [c, j, p, g];
 }
+
 function hide(element){
   element.setAttribute("class", "hidden");
 }
@@ -36,11 +35,9 @@ function showResult([c, j, p, g]){
   }else if(Math.max(c, j, p, g) === p){
     document.querySelector("h2").innerText = "Your Answer is Python"
     document.querySelector("#answer").innerText = "Python is a well documented well maintained programming language formatted for speed and readability. While it may not have the same open-ended uses like C# and Javascript it's fast computational and logic processing makes it an invaluable tool."
-  }else if(Math.max(c, j, p, g) === g){
+  } else {
     document.querySelector("h2").innerText = "Your Answer is Go"
     document.querySelector("#answer").innerText = "Go was created at Google when they wanted to have a better language for their systems. It is described as having run time efficiency like C, readability like Python and Javascript and has high performance networking and multiprocessing."
-  }else{
-    console.log("something went wrong with get result")
   }
 }
 
@@ -69,35 +66,30 @@ window.addEventListener("load", function(){
   form1.addEventListener("submit", function(event){
     event.preventDefault();
     answers += document.querySelector('input[name="q1"]:checked').value
-    console.log(answers);
     show(q2Div);
     hide(q1Div);
   })
   form2.addEventListener("submit", function(event){
     event.preventDefault();
     answers += document.querySelector('input[name="q2"]:checked').value
-    console.log(answers);
     show(q3Div);
     hide(q2Div);
   })
   form3.addEventListener("submit", function(event){
     event.preventDefault();
     answers += document.querySelector('input[name="q3"]:checked').value
-    console.log(answers);
     show(q4Div);
     hide(q3Div);
   })
   form4.addEventListener("submit", function(event){
     event.preventDefault();
     answers += document.querySelector('input[name="q4"]:checked').value
-    console.log(answers);
     show(q5Div);
     hide(q4Div);
   })
   form5.addEventListener("submit", function(event){
     event.preventDefault();
     answers += document.querySelector('input[name="q5"]:checked').value
-    console.log(answers);
     show(q6Div);
     hide(q5Div);    
   })
