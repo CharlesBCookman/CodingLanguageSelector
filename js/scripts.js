@@ -12,6 +12,8 @@ function getResult(answers){
       p++;
     }else if (answers.charAt(i) === "g"){
       g++;
+    } else {
+      console.log("something went wrong with getResult")
     }
   }
   return [c, j, p, g];
@@ -24,9 +26,15 @@ function show(element){
   element.removeAttribute("class");
 }
 
-function collectAnswers(){
+let collectAnswers = () => {
   let answers = ""
-  answers = document.forms.form1.element.q1.value + document.forms.form2.element.q2.value + document.forms.form3.element.q3.value + document.forms.form4.element.q4.value + document.forms.form5.element.q5.value + document.forms.form6.element.q6.value;
+  let a1 = document.forms.form1.element.q1.value;
+  let a2 = document.forms.form2.element.q2.value;
+  let a3 = document.forms.form3.element.q3.value;
+  let a4 = document.forms.form4.element.q4.value;
+  let a5 = document.forms.form5.element.q5.value;
+  let a6 = document.forms.form6.element.q6.value;
+  answers = a1 + a2 + a3 + a4 + a5 + a6;
   console.log(answers);
   return answers;
 }
@@ -96,9 +104,9 @@ window.addEventListener("load", function(){
     event.preventDefault();
   })
   form6.addEventListener("submit", function(event){
-    showResult(getResult(collectAnswers));
+    event.preventDefault();
+    showResult(getResult(collectAnswers()));
     show(result);
     hide(q6Div);
-    event.preventDefault();
   })
   })
